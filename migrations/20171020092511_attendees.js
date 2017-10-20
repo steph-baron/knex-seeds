@@ -6,13 +6,12 @@ exports.up = function(knex, Promise) {
       .integer('concert_id')
       .notNullable()
       .references('id')
-      .inTable('name')
-      .index();
+      .inTable('name');
     table.string('name').notNullable().defaultTo('');
     table.integer('age').notNullable().defaultTo(0);
   })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('attendees'); 
+  return knex.schema.dropTable('attendees');
 };
