@@ -6,7 +6,8 @@ exports.up = function(knex, Promise) {
       .integer('concert_id')
       .notNullable()
       .references('id')
-      .inTable('name');
+      .inTable('name')
+      .index();
     table.string('name').notNullable().defaultTo('');
     table.integer('age').notNullable().defaultTo(0);
   })
